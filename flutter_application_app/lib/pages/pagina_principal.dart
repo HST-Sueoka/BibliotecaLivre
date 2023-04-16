@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../controller/controlador_de_login.dart';
 import '../suporte/suporte.dart';
+import 'listar_desejados.dart';
 import 'listar_favoritos.dart';
 import 'listar_lidos.dart';
 import 'listar_todos_os_livros.dart';
@@ -21,6 +22,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
     PaginaLivroGeral(),
     ListarFavoritos(),
     ListarLidos(),
+    ListarDesejados(),
   ];
   int index = 0;
 
@@ -121,6 +123,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
       ),
       body: telas[index],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         backgroundColor: Auxiliar.corPrincipal,
         selectedItemColor: Colors.green,
         unselectedItemColor: Colors.white,
@@ -152,6 +155,12 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
               Icons.menu_book,
             ),
             label: 'Lidos',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.hourglass_empty
+            ),
+            label: 'Desejados',
           ),
         ],
       ),

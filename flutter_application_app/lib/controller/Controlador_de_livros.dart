@@ -2,12 +2,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class ControladorDeLivros {
+
   listar() {
     return FirebaseFirestore.instance
         .collection('livros')
         .orderBy('arquivo', descending: false);
   }
 
+
+  // Livros Favoritos
   Future<List> livrosFavoritados() async {
     var uid = FirebaseAuth.instance.currentUser!.uid;
     var res;
@@ -25,6 +28,23 @@ class ControladorDeLivros {
     return res;
   }
 
+    Future<void> favoritos(String livroId) async {
+    final user = FirebaseAuth.instance.currentUser;
+    final userRef =
+        FirebaseFirestore.instance.collection('usuarios').doc(user?.uid);
+
+    if ((await userRef.get())['favoritos'].contains(livroId)) {
+      await userRef.update({
+        'favoritos': FieldValue.arrayRemove([livroId])
+      });
+    } else {
+      await userRef.update({
+        'favoritos': FieldValue.arrayUnion([livroId])
+      });
+    }
+  }
+  
+  // Livros Lidos
   Future<List> livrosLidos() async {
     var uid = FirebaseAuth.instance.currentUser!.uid;
     var res;
@@ -42,23 +62,7 @@ class ControladorDeLivros {
     return res;
   }
 
-  Future<void> favoritos(String livroId) async {
-    final user = FirebaseAuth.instance.currentUser;
-    final userRef =
-        FirebaseFirestore.instance.collection('usuarios').doc(user?.uid);
-
-    if ((await userRef.get())['favoritos'].contains(livroId)) {
-      await userRef.update({
-        'favoritos': FieldValue.arrayRemove([livroId])
-      });
-    } else {
-      await userRef.update({
-        'favoritos': FieldValue.arrayUnion([livroId])
-      });
-    }
-  }
-
-  Future<void> lidos(String livroId) async {
+    Future<void> lidos(String livroId) async {
     final user = FirebaseAuth.instance.currentUser;
 
     final userRef =
@@ -73,5 +77,22 @@ class ControladorDeLivros {
         'lidos': FieldValue.arrayUnion([livroId])
       });
     }
+  }
+
+  // Livros Desejados
+  void adicionarDesejados(autor, titulo) {
+    FirebaseFirestore.instance.collection('desejados').add(
+      {
+        'autor': autor,
+        'titulo': titulo,
+        'arquivo': autor + " - " + titulo,
+      },
+    );
+  }
+
+    listarDesejados() {
+    return FirebaseFirestore.instance
+        .collection('desejados')
+        .orderBy('arquivo', descending: false);
   }
 }

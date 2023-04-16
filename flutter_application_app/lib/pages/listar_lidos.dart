@@ -12,7 +12,7 @@ class ListarLidos extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(
+            Image.asset(
               Auxiliar.imagemEmDesenvolvimento,
               width: MediaQuery.of(context).size.width * 0.4,
             ),
