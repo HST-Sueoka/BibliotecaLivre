@@ -62,7 +62,7 @@ abstract class Auxiliar {
 
   static const String nomeAplicativo = 'Biblioteca Compartilhada';
 
-  static const String imagemLogo = "assets/images/color-black.svg";
+  static const String imagemLogo = "assets/images/testeLogo.png";
 
   static const String imagemEmDesenvolvimento = "assets/images/helmet.png";
 

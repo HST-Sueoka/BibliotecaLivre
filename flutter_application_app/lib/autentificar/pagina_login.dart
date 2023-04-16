@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../controller/controlador_de_login.dart';
@@ -30,9 +30,10 @@ class _PaginaLoginState extends State<PaginaLogin> {
               Container(
                 padding: EdgeInsets.fromLTRB(20, 0, 20, 5),
                 child: Center(
-                  child: SvgPicture.asset(
+                  child: Image.asset(
                     Auxiliar.imagemLogo,
-                    width: MediaQuery.of(context).size.width * 0.4),
+                    width: MediaQuery.of(context).size.width * 0.4,
+                  ),
                 ),
               ),
               campoTexto('Email', Icons.email, txtEmail),
