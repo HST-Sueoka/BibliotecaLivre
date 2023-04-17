@@ -77,5 +77,5 @@ abstract class Auxiliar {
 
   static const String nomeDesenvolvedor = "Henrique Santa Terra";
 
-  static const String fotoDesenvolvedor = "assets/images/helmet.png";
+  static const String fotoDesenvolvedor = "assets/images/eu.jpg";
 }

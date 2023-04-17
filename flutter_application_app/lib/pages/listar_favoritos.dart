@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_app/suporte/suporte.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class ListarFavoritos extends StatelessWidget {
   const ListarFavoritos({Key? key}) : super(key: key);
@@ -14,12 +13,29 @@ class ListarFavoritos extends StatelessWidget {
           children: [
             Image.asset(
               Auxiliar.imagemEmDesenvolvimento,
-              width: MediaQuery.of(context).size.width * 0.2,
+              width: MediaQuery.of(context).size.width * 0.35,
             ),
             const SizedBox(height: 20),
-            const Text(
-              'Função listar favoritos em desenvolvimento',
-              style: TextStyle(fontSize: 20),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10, 35, 10, 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Expanded(
+                    child: Text(
+                      "Função Listar Favoritos em desenvolvimento.",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Auxiliar.corDaFonteSimples),
+                      maxLines: 4,
+                      overflow: TextOverflow.ellipsis,
+                      textDirection: TextDirection.ltr,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
