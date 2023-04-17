@@ -60,20 +60,20 @@ abstract class Auxiliar {
 
   // Variáveis de Texto
 
-  static const String nomeAplicativo = 'Biblioteca Compartilhada';
+  static const String nomeAplicativo = 'Biblioteca Livre';
 
   static const String imagemLogo = "assets/images/testeLogo.png";
 
   static const String imagemEmDesenvolvimento = "assets/images/helmet.png";
 
   static const String tituloSobreApp =
-      "O propósito do software Shared Library.";
+      "O propósito do software Biblioteca Livre.";
 
   static const String primeiroParagrafo =
-      "O software Shared Library tem como função o compartilhamento da biblioteca virtual que o usuário tem em posse, sendo necessário somente o login do usuário, para que seja possivel ter controle do fluxo de usuário no Banco de dados.";
+      "O software Biblioteca Livre tem como função o compartilhamento de livros digitais que estão em domínio público, sendo necessário somente o login do usuário para acessar o software, para que seja possivel ter controle do fluxo de usuários.";
 
   static const String segundoParagrafo =
-      "Seu objetivo é a democratização do acesso aos livros, como também estimular a leitura.";
+      "Seu objetivo é democratizar o acesso aos livros, como também estimular a leitura.";
 
   static const String nomeDesenvolvedor = "Henrique Santa Terra";
 

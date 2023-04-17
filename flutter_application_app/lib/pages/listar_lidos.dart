@@ -14,7 +14,7 @@ class ListarLidos extends StatelessWidget {
           children: [
             Image.asset(
               Auxiliar.imagemEmDesenvolvimento,
-              width: MediaQuery.of(context).size.width * 0.4,
+              width: MediaQuery.of(context).size.width * 0.2,
             ),
             const SizedBox(height: 20),
             // ignore: prefer_const_constructors

@@ -143,7 +143,7 @@ class _SobreAppState extends State<SobreApp> {
                 children: [
                   Image.asset(
                     Auxiliar.fotoDesenvolvedor,
-                    width: MediaQuery.of(context).size.width * 0.4,
+                    width: MediaQuery.of(context).size.width * 0.2,
                   ),
                 ],
               ),

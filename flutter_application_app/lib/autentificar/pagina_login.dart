@@ -32,7 +32,7 @@ class _PaginaLoginState extends State<PaginaLogin> {
                 child: Center(
                   child: Image.asset(
                     Auxiliar.imagemLogo,
-                    width: MediaQuery.of(context).size.width * 0.4,
+                    width: MediaQuery.of(context).size.width * 0.6,
                   ),
                 ),
               ),
