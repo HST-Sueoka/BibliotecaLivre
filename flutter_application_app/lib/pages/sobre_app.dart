@@ -45,7 +45,8 @@ class _SobreAppState extends State<SobreApp> {
             ),
           ],
         ),
-        body: Column(
+        body: SingleChildScrollView(
+            child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -112,7 +113,42 @@ class _SobreAppState extends State<SobreApp> {
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(15, 60, 15, 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Expanded(
+                    child: Center(
+                      child: Text(
+                        Auxiliar.nomeDesenvolvedor,
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Auxiliar.corDaFonteSimples),
+                        maxLines: 7,
+                        overflow: TextOverflow.ellipsis,
+                        textDirection: TextDirection.ltr,
+                        textAlign: TextAlign.justify,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(15, 10, 15, 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    Auxiliar.fotoDesenvolvedor,
+                    width: MediaQuery.of(context).size.width * 0.4,
+                  ),
+                ],
+              ),
+            ),
           ],
-        ));
+        )));
   }
 }

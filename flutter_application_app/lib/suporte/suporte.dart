@@ -74,4 +74,8 @@ abstract class Auxiliar {
 
   static const String segundoParagrafo =
       "Seu objetivo é a democratização do acesso aos livros, como também estimular a leitura.";
+
+  static const String nomeDesenvolvedor = "Henrique Santa Terra";
+
+  static const String fotoDesenvolvedor = "assets/images/helmet.png";
 }
