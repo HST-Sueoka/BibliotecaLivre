@@ -1,4 +1,4 @@
-# BibliotecaPessoal
+# BibliotecaLivre
 
 Coleção de Livros compartilhados
 
